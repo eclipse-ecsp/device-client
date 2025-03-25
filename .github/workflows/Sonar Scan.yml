@@ -11,7 +11,8 @@ jobs:
   sonarqube:
     runs-on: ubuntu-latest
     env:
-      BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed
+      BUILD_WRAPPER_OUT_DIR: ${{github.workspace}}/client/build # Directory where build-wrapper output will be placed
+      run : echo "$BUILD_WRAPPER_OUT_DIR"
     steps:
     - uses: actions/checkout@v4
       with:
