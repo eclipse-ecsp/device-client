@@ -18,7 +18,7 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
     - name: Install sonar-scanner and build-wrapper
-      uses: sonarsource/sonarcloud-github-c-cpp@v5.0.0 # Ex: v4.0.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan-for-c-and-c
+      uses: sonarsource/sonarcloud-github-c-cpp@v3.2.0 # Ex: v4.0.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan-for-c-and-c
       with:
         args: >
          -Dsonar.projectKey=eclipse-ecsp_entities
