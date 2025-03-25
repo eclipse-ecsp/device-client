@@ -1,11 +1,12 @@
 name: Sonar Scan
-# Trigger analysis when pushing to your main branches, and when creating a pull request.
 on:
+  # Trigger analysis when pushing to your main branches, and when creating a pull request.
   push:
     branches:
       - main
   pull_request:
       types: [opened, synchronize, reopened]
+      
 jobs:
   sonarqube:
     runs-on: ubuntu-latest
@@ -16,11 +17,13 @@ jobs:
       with:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
-    - name: Install Build Wrapper
-      uses: SonarSource/sonarqube-scan-action/install-build-wrapper@master
-      env:
-        SONAR_HOST_URL: https://sonarcloud.io
-    - name: Run Build Wrapper
+    - name: Install sonar-scanner and build-wrapper
+      uses: sonarsource/sonarcloud-github-c-cpp@v5.0.0 # Ex: v4.0.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan-for-c-and-c
+      with:
+        args: >
+         -Dsonar.projectKey=eclipse-ecsp_entities
+         -Dsonar.organization=eclipse-ecsp
+    - name: Run build-wrapper
       run: |
         # Here goes your compilation wrapped with Build Wrapper
         # For more information, see https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/languages/c-family/prerequisites/#using-buildwrapper
@@ -35,13 +38,7 @@ jobs:
         cd build
         cmake ..
         build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} make
-    - name: SonarQube Scan
-      uses: SonarSource/sonarqube-scan-action@v5.0.0
+    - name: Run sonar-scanner
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
-        SONAR_ROOT_CERT: ${{ secrets.SONAR_ROOT_CERT }}
-      with:
-        # Consult https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner/ for more information and options
-        args: >
-          --define sonar.cfamily.compile-commands="${{ env.BUILD_WRAPPER_OUT_DIR }}/compile_commands.json" 
+      run: sonar-scanner --define sonar.cfamily.compile-commands="${{ env.BUILD_WRAPPER_OUT_DIR }}/compile_commands.json" #Consult https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/ for more information and options
