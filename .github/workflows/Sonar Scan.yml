@@ -19,7 +19,7 @@ jobs:
     - name: Install Build Wrapper
       uses: SonarSource/sonarqube-scan-action/install-build-wrapper@master
       env:
-        SONAR_HOST_URL: 'https://sonarcloud.io'
+        SONAR_HOST_URL: https://sonarcloud.io
     - name: Run Build Wrapper
       run: |
         # Here goes your compilation wrapped with Build Wrapper
