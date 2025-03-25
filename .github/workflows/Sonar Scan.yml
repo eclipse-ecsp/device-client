@@ -19,10 +19,6 @@ jobs:
         fetch-depth: 0
     - name: Install sonar-scanner and build-wrapper
       uses: sonarsource/sonarcloud-github-c-cpp@v3.2.0 # Ex: v4.0.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan-for-c-and-c
-      with:
-        args: >
-         -Dsonar.projectKey=eclipse-ecsp_entities
-         -Dsonar.organization=eclipse-ecsp
     - name: Run build-wrapper
       run: |
         # Here goes your compilation wrapped with Build Wrapper
@@ -41,4 +37,4 @@ jobs:
     - name: Run sonar-scanner
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: sonar-scanner --define sonar.cfamily.compile-commands="${{ env.BUILD_WRAPPER_OUT_DIR }}/compile_commands.json" #Consult https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/ for more information and options
+      run: sonar-scanner --define -sonar.projectKey=eclipse-ecsp_entities sonar.organization=eclipse-ecs psonar.cfamily.compile-commands="${{ env.BUILD_WRAPPER_OUT_DIR }}/compile_commands.json" #Consult https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/ for more information and options
