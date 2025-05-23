@@ -34,7 +34,7 @@
  * Define it if it is not set externally.
  */
 #if !defined(AUTO_LIB_VERSION)
-#define AUTO_LIB_VERSION "3.1.2"
+#define AUTO_LIB_VERSION "1.0.0"
 #endif /* IGNITE_ANALYTICS_VERSION */
 
 /**

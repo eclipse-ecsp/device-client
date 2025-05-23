@@ -32,7 +32,7 @@
  * Define it if it is not set externally.
  */
 #if !defined(EVENT_LIB_VERSION)
-#define EVENT_LIB_VERSION "3.1.2"
+#define EVENT_LIB_VERSION "1.0.0"
 #endif /* EVENT_LIB_VERSION */
 
 /**

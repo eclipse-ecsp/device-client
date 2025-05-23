@@ -32,7 +32,7 @@
  * Define it if it is not set externally.
  */
 #if !defined(NETWORK_LIB_VERSION)
-#define NETWORK_LIB_VERSION "3.1.2"
+#define NETWORK_LIB_VERSION "1.0.0"
 #endif /* NETWORK_LIB_VERSION */
 
 /**

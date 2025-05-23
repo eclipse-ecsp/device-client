@@ -32,7 +32,7 @@
  * Define it if it is not set externally.
  */
 #if !defined(DEVICE_LIB_VERSION)
-#define DEVICE_LIB_VERSION "3.1.2"
+#define DEVICE_LIB_VERSION "1.0.0"
 #endif /* IGNITE_DEVICE_LIB_VERSION */
 
 /**

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4)
 
 project(deviceclient)
 
-add_definitions(-std=c++11 -DDEVICE_CLIENT_APP_VERSION="3.1.2")
+add_definitions(-std=c++11 -DDEVICE_CLIENT_APP_VERSION="1.0.0")
 include_directories(
 	${Utils_INCLUDE_DIRS}
     ${Event_INCLUDE_DIRS}

@@ -32,7 +32,7 @@
  * Define it if it is not set externally.
  */
 #if !defined(CORE_LIB_VERSION)
-#define CORE_LIB_VERSION "3.1.2"
+#define CORE_LIB_VERSION "1.0.0"
 #endif /* CORE_LIB_VERSION */
 
 /**

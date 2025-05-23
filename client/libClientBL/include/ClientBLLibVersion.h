@@ -32,7 +32,7 @@
  * Define it if it is not set externally.
  */
 #if !defined(CLIENTBL_LIB_VERSION)
-#define CLIENTBL_LIB_VERSION "3.1.2"
+#define CLIENTBL_LIB_VERSION "1.0.0"
 #endif /* CLIENTBL_LIB_VERSION */
 
 /**
