@@ -59,7 +59,7 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: coverage_report
-        path: /home/runner/work/device-client/device-client/client/Reports/afacts
+        path: /home/runner/work/device-client/device-client/client/build/bin/Reports/afacts
 
      
     #- name: make check
