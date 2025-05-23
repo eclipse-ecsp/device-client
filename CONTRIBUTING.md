@@ -1,9 +1,14 @@
 # How to contribute
 
 Support and contributions from the open source community are essential for keeping
-`device-client` up to date and always improving! There are a few guidelines that we need
+`eclipse-ecsp/device-client` up to date and always improving! There are a few guidelines that we need
 contributors to follow to keep the project consistent, as well as allow us to keep
-maintaining `device-client` in a reasonable amount of time.
+maintaining `eclipse-ecsp/device-client` in a reasonable amount of time.
+
+ECSP project welcomes contributions and suggestions. Please follow the below steps to be able to contribute to ECSP,
+- Create an [Eclipse Foundation account](https://accounts.eclipse.org/).
+- Review and Agree to [Eclipse Contributor Agreement](https://www.eclipse.org/legal/eca/).
+- More details about contribution can be found in [Eclipse Project Handbook - Contributors](https://www.eclipse.org/projects/handbook/#contributing-contributors) section.
 
 Please note that this project is released with a [Contributor Code of Conduct][coc].
 
@@ -33,7 +38,7 @@ If you want to submit a bug fix or new feature, make sure that all tests are pas
 ## Submitting the Pull Request
 
 - Push your changes to your topic branch on your fork of the repo.
-- Submit a pull request from your topic branch to the main branch on the `device-client` repository.
+- Submit a pull request from your topic branch to the main branch on the `eclipse-ecsp/device-client` repository.
 - Be sure to tag any issues your pull request is taking care of / contributing to. \* Adding "Closes #123" to a pull request description will auto close the issue once the pull request is merged in.
 
 

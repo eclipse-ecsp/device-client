@@ -4,7 +4,7 @@
 [![License Compliance](../../actions/workflows/license-compliance.yml/badge.svg)](../../actions/workflows/license-compliance.yml)
 [![Coverage](../../actions/workflows/UnitTest.yml/badge.svg)](../../actions/workflows/UnitTest.yml)
 
-# deviceclient
+# Device Client
 deviceclient is the device's edge component in the overall Ignite eco system. It aggregates various data from the deployed device, validates them, performs various edge algorithms, persists the data, schedule and upload the data to cloud over secured connections.
 
 This application internally contains many sub-components.
@@ -17,7 +17,7 @@ libAuto - contains automotive specific usecases
 libNetwork - contains cloud communication components
 libDevice - contains device specific processing/communication logics
 libUtils - contains various utility components
-libEvent - Event library using which any application in the system can create events and send them to deviceclient
+libEvent - Library to create and send events .Using Event library any application in the system can create events and send them to deviceclient.
 libmosquitto - mqtt client library
 ```
 Apart from libEvent library, all other components are statically linked with the deviceclient application binary.
@@ -28,7 +28,6 @@ Along with the above SW components, deviceclient also comes with a configuration
 * [Getting Started](#getting-started)
 * [Usage](#usage)
 * [How to contribute](#how-to-contribute)
-* [Built with Dependencies](#built-with-dependencies)
 * [Code of Conduct](#code-of-conduct)
 * [Authors](#authors)
 * [Security Contact Information](#security-contact-information)
@@ -36,7 +35,6 @@ Along with the above SW components, deviceclient also comes with a configuration
 * [Troubleshooting](#troubleshooting)
 * [License](#license)
 * [Announcements](#announcements)
-* [Acknowledgments](#acknowledgments)
 
 
 ## Getting Started
@@ -44,14 +42,14 @@ These instructions will get you a copy of the project up and running on your loc
 
 
 ### Prerequisites
-In order to build this library, in general, you need to have the C++ build environment in your Linux machine. Below installations will help to setup so.
+In order to build this library, in general, you need to have the C++ build environment in your Linux machine. Below installations will help to setup so (Versions of repos may vary based on the OS version).
 
 ```
 * [cmake] sudo apt install cmake
 * [zlib] sudo apt install zlib1g-dev
 * [sqlite] sudo apt-get install libsqlite3-dev
 * [curl] sudo apt-get install libcurl4-openssl-dev
-* [ssl] sudo apt-get install libssl1.0-dev
+* [ssl] sudo apt-get install libssl-dev
 * [crypto] sudo apt-get install libcrypto++-dev
 * [zmq] sudo apt-get install libzmq3-dev
 ```
@@ -64,7 +62,8 @@ Below are the 3rd-party library used internally by deviceclient and built along 
 ```
 
 ### Build process
-Post installing above components, deviceclient can be built as below.
+Post installing above components, copy the device-client repo code to local machine . 
+After that deviceclient can be built as below.
 ```
 <working-directory>\device-client\client> ls -l
 \deviceclient
@@ -147,6 +146,10 @@ Now the build can be triggered post setting up the toolchain (if any).
 
 Google test framework is used for unit tests. In order to run the unit tests, the deviceclient application has to be built by enabling the UT flag 'IC_UNIT_TEST' in the top cmake file. Post building the client with unit test flag enabled, client shall be started to run it along with the unit tests.
 
+### Sample Simulator
+Sample device simulator is provided for validating the messages received from cloud, this simulator mimics the behavior of receiving the message(Over ZMQ) from deviceclient and then sending the message back to deviceclient.
+Usage instruction of this simulator is present at [HowToUse.txt](./simulators/zmq_device_simulator/HowToUse.txt)
+
 ## How to contribute
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our contribution guidelines, and the process for submitting pull requests to us.
 
@@ -155,7 +158,7 @@ Please read [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) for details on our code o
 
 
 ## Authors
-* **Nayan Deshpande** - *Initial work*
+* [**Nayan Deshpande**] (https://github.com/nayandeshpandeharman)- *Initial work*
 * **Viji Daniel John Thankachan** - *Initial work* 
 
 See also the list of [contributors](https://github.com/eclipse-ecsp/device-client/graphs/contributors) who participated in this project.
@@ -178,8 +181,3 @@ This project is licensed under the Apache-2.0 License - see the [LICENSE](./LICE
 All updates to this component are present in our [releases page](https://github.com/eclipse-ecsp/device-client/releases).
 For the versions available, see the [tags on this repository](https://github.com/eclipse-ecsp/device-client/tags)..
 
-## Acknowledgments
-TODO
-
-* Acknowledgement 1
-* Acknowledgement 2
