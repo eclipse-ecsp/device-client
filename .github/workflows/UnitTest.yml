@@ -37,14 +37,14 @@ jobs:
         cmake -DIC_UNIT_TEST=1 -DCMAKE_CXX_FLAGS="-fprofile-arcs -ftest-coverage -fPIC -O0" -DCMAKE_EXE_LINKER_FLAGS="-fprofile-arcs -ftest-coverage" ..
         make
         cd bin/
-        rm -rf ../../Reports
+        rm -rf Reports
         export GTEST_OUTPUT="xml:./Unit_Test_Report.xml"
         ./deviceclient -c ../../../assets/os-sandbox.conf
-        cp Unit_Test_Report.xml ../../Reports/
+        cp Unit_Test_Report.xml Reports/
         lcov --capture --directory ../../build/ --output-file total_coverage.info
         lcov --remove total_coverage.info '/usr/include/*' '/usr/lib/*' '*/googletest/*' '*/unittest/*' '*/js/*.c' '*/jsoncpp/json.h' '*/src/jsoncpp.cpp' '*/libmosquitto/*' -o filtered_coverage.info
-        genhtml filtered_coverage.info --output-directory ../../Reports/coverage
-        cd ../../Reports
+        genhtml filtered_coverage.info --output-directory Reports/coverage
+        cd Reports
         tar -zcvf coverage.tar coverage
 
         # create temporary artifacts directory
