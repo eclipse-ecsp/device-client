@@ -43,8 +43,8 @@ jobs:
         # copy the build artifacts to the afacts directory
         cp bin/deviceclient afacts/
         cp lib/libEvent.so afacts/
-        cp ../../assets/cacert.pem afacts/
-        cp ../../assets/server-cert.pem afacts/
+        cp ../../assets/SampleCaCert.pem afacts/
+        cp ../../assets/SampleCert.pem afacts/
         cp ../../assets/os-sandbox.conf afacts/
 
         cd ../../simulators/zmq_device_simulator
