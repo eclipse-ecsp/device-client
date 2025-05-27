@@ -159,7 +159,7 @@ Please read [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) for details on our code o
 
 ## Authors
 * [**Nayan Deshpande**](https://github.com/nayandeshpandeharman) - *Initial work*
-* **Viji Daniel John Thankachan** - *Initial work* 
+* [**Viji Daniel John Thankachan**](https://github.com/vijidaniel-johnthankachan_harman) - *Initial work* 
 
 See also the list of [contributors](https://github.com/eclipse-ecsp/device-client/graphs/contributors) who participated in this project.
 
