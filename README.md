@@ -1,11 +1,13 @@
-[<img src="./images/logo.png" width="300" height="150"/>](logo.png)
+<div align="center">
+  <img src="./images/logo.png" width="300" height="150"/>
+</div>
 
 [![Build](../../actions/workflows/c-cpp.yml/badge.svg)](../../actions/workflows/c-cpp.yml)
 [![License Compliance](../../actions/workflows/license-compliance.yml/badge.svg)](../../actions/workflows/license-compliance.yml)
 [![Coverage](../../actions/workflows/UnitTest.yml/badge.svg)](../../actions/workflows/UnitTest.yml)
 
 # Device Client
-deviceclient is the device's edge component in the overall Ignite eco system. It aggregates various data from the deployed device, validates them, performs various edge algorithms, persists the data, schedule and upload the data to cloud over secured connections.
+deviceclient is the device's edge component in the overall Connected Services Platform's eco system.. It aggregates various data from the deployed device, validates them, performs various edge algorithms, persists the data, schedule and upload the data to cloud over secured connections.
 
 This application internally contains many sub-components.
 
